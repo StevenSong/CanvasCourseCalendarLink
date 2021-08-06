@@ -1,1 +1,20 @@
-<h1>Hello World</h1>
+<h1>Canvas Course Calendar Link</h1>
+<p>Canvas allows students to subscribe to a calendar feed with all course events and updates dynamically. However, the feed combines all courses and does not allow users to color code course schedules. If you'd like individual calendar feeds per course, you can copy and paste the Canvas course link below to get the link for individual course calendar feeds.</p>
+<script type="text/javascript">
+  function getCalendarLink() {
+    var courseURLBox = document.getElementById("courseURL");
+    var calURLBox = document.getElementById("calURL");
+    var apiURL = courseURLBox.value.replace("edu/courses", "edu/api/v1/courses")
+    fetch(apiURL).then(res => {
+      return res.json();
+    }).then(data => {
+      var calURL = data.calendar.ics
+      calURLBox.textContent = calURL
+    }).catch(err => {
+      // Do something for an error here
+    });
+  }
+</script>
+Paste Canvas Course Link Here: <input type="text" id="courseURL" oninput="return getCalendarLink()" />
+<br>
+Canvas Course Calendar Link: <span id="calURL"></span>
