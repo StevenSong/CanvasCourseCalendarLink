@@ -23,7 +23,7 @@ function copyToClipboard(link, course) {
   input.select();
   document.execCommand("copy");
   document.body.removeChild(input);
-  alert("Copied link for " + course + " to clipboard")
+  alert("Copied link for " + course + " to clipboard:\n" + link)
 }
 
 function showCourseLinks() {
