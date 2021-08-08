@@ -81,19 +81,6 @@ textarea {
   max-width: fit-content;
 }
 
-/*.copy-col button {
-  margin: 0;
-  border: 0;
-  padding: 0;
-  background-color: transparent;
-  width: 100%;
-  height: 100%;
-}
-
-.copy-col button:hover {
-  background-color: lightgray;
-}*/
-
 #course-table th {
   padding-top: 12px;
   padding-bottom: 12px;
