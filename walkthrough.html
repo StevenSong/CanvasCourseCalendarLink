@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="walkthrough.js"></script>
+  </head>
+  <body>
+    <div class="content">
+      <div class="nav">
+        <a class="nav-item" href="index.html">
+          <div class="nav-item-content">
+            Intro
+          </div>
+        </a>
+        <a class="nav-item" href="walkthrough.html">
+          <div class="nav-item-content">
+            Walkthrough
+          </div>
+        </a>
+        <a class="nav-item" href="https://github.com/StevenSong/CanvasCourseCalendarLink">
+          <div class="nav-item-content">
+            GitHub
+          </div>
+        </a>
+      </div>
+      <p>
+        This walkthrough tries to simplify finding the link to course specific calendar feeds using the Canvas API.
+        Since I can't pretend to be you when accessing Canvas, this walkthrough will give you links to click and will
+        pick out the info you need based on the info you copy and paste from those links. <b>None</b> of this info is
+        saved by me and all the logic is done right in your web browser.
+      </p>
+      <div id="walkthrough">
+        <div id="get-course-list">
+          <h3>Let's find the calendar links for your courses!</h3>
+          <p>
+            Go to <a target="_blank" rel="noopener noreferrer" href="https://canvas.uchicago.edu/api/v1/courses">
+            this link</a> and copy and paste the big blob of text below:
+          </p>
+          <textarea placeholder="Paste the big blob of text from the link above here!" id="paste-box" oninput="return getCourseList()"></textarea>
+        </div>
+        <div id="course-list-links" class="hidden">
+          <h3>Here are all your individual course calendars links:</h3>
+          <table id="course-table">
+            <tr>
+              <th class="name-col">Course</th>
+              <th class="link-col">Calendar Link</th>
+              <th class="copy-col"></th>
+            </tr>
+          </table>
+        </div>
+        <p id="error-box">
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
