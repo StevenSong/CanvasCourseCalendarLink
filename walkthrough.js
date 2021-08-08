@@ -28,6 +28,7 @@ function copyToClipboard(link, course) {
 
 function showCourseLinks() {
   clearErrors()
+  let errorBox = document.getElementById("error-box")
   try {
     let courses = JSON.parse(document.getElementById("paste-box").value)
     if (courses.length == 0) {
