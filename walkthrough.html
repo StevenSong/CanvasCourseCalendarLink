@@ -29,16 +29,36 @@
         saved by me and all the logic is done right in your web browser.
       </p>
       <div id="walkthrough">
-        <div id="get-course-list">
-          <h3>Let's find the calendar links for your courses!</h3>
+        <div id="canvas-login">
+          <h3>Step 1: Make sure you're logged in to Canvas</h3>
+          <p>
+            Login to Canvas at <a target="_blank" rel="noopener noreferrer" href="https://canvas.uchicago.edu" onclick="return showCoursePrompt()">canvas.uchicago.edu</a>.
+            Once you're logged in, come back to this page.
+          </p>
+          <p>
+            <i>This method only works if you have cookies enabled</i>.
+            If you don't know what that means, you probably don't need to worry about it!
+          </p>
+          <p>
+            Already logged in? <a href="javascript:void(0)" onclick="return showCoursePrompt()">Next</a>
+          </p>
+        </div>
+        <div id="get-course-list" class="hidden">
+          <h3>Step 2: Let's find the calendar links for your courses!</h3>
           <p>
             Go to <a target="_blank" rel="noopener noreferrer" href="https://canvas.uchicago.edu/api/v1/courses">
             this link</a> and copy and paste the big blob of text below:
           </p>
-          <textarea placeholder="Paste the big blob of text from the link above here!" id="paste-box" oninput="return getCourseList()"></textarea>
+          <textarea placeholder="Paste the big blob of text from the link above here!" id="paste-box" oninput="return showCourseLinks()"></textarea>
+          <p>
+            Missed something? <a href="javascript:void(0)" onclick="return undoShowCoursePrompt()">Back</a>
+          </p>
         </div>
         <div id="course-list-links" class="hidden">
-          <h3>Here are all your individual course calendars links:</h3>
+          <h3>Step 3: Here are all your individual course calendars links:</h3>
+          <p>
+            Use the <span class="code">.ics</span> links to import the calendar feeds to your favorite calendar service.
+          </p>
           <table id="course-table">
             <tr>
               <th class="name-col">Course</th>
@@ -46,10 +66,16 @@
               <th class="copy-col"></th>
             </tr>
           </table>
+          <p>
+            Missed something? <a href="javascript:void(0)" onclick="return undoShowCourseLinks()">Back</a>
+          </p>
         </div>
         <p id="error-box">
         </p>
       </div>
+      <p>
+        Thanks for using this walkthrough! If you have any issues, feel free to message me or <a target="_blank" rel="noopener noreferrer" href="https://github.com/StevenSong/CanvasCourseCalendarLink/issues/new">open an issue on GitHub</a>.
+      </p>
     </div>
   </body>
 </html>
