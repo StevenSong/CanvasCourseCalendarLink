@@ -10,6 +10,7 @@ body {
 .content {
   margin: 0 auto;
   width: 50vw;
+  min-width: 500px;
 }
 
 .nav {
