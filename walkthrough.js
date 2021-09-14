@@ -41,6 +41,7 @@ function showCourseLinks() {
 
       let table = document.getElementById("course-table")
       let anyError = false
+      console.log(courses)
       for (let i = 0; i < courses.length; i++) {
         let course = courses[i]
         row = table.insertRow(-1)
